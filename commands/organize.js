@@ -24,13 +24,14 @@ function organize(srcPath) {
   if (fs.existsSync(organizedFiles) == false) {
     //organizedfiles naam ka folder exist nhi krta to ek folder bana do warna rhne do
     fs.mkdirSync(organizedFiles);
-  } else console.log("folder already exists");
+  } 
+  // else console.log("folder already exists");
 
 //3. scan the entire srcPath(doenloads folder in this case)
 
   //Reads the contents of the directory.-> basically reads the names of files present in directory
   let allFiles = fs.readdirSync(srcPath);
-  console.log(allFiles);
+  // console.log(allFiles);
 
 //4.trvaerse over all the files and classify them on the basis of their extension (.pdf , .mp3)
   for (let i = 0; i < allFiles.length; i++){
@@ -41,7 +42,7 @@ function organize(srcPath) {
       //1. check if it is a file or folder
       //lstatsync gives the information regarding the link provided ,
       let isFile = fs.lstatSync(fullPathOfFile).isFile(); //true-> file hai to  or false-> agar folder h 
-      console.log(allFiles[i]+" is "+ isFile);
+      // console.log(allFiles[i]+" is "+ isFile);
       if (isFile) {
         //1.1 get ext name
         let ext = path.extname(allFiles[i]).split(".")[1];
@@ -66,7 +67,6 @@ function getFolderName(ext) {
   }
   return "miscellaneous"
   //magic 
-  return folderName;
 }
 
 function copyFileToDest(srcPath, fullPathOfFile, folderName) {
@@ -89,5 +89,9 @@ function copyFileToDest(srcPath, fullPathOfFile, folderName) {
 }
 
 
-let srcPath="E:\\FJP-5\\HTML\\Sample_Projects\\File Organizer\\downloads";
-organize(srcPath);
+// let srcPath="E:\\FJP-5\\HTML\\Sample_Projects\\File Organizer\\downloads";
+// organize(srcPath);
+
+module.exports = {
+  organize:organize
+}

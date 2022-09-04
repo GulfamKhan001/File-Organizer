@@ -1,8 +1,8 @@
 # File-Organizer
 
- * Created an File organize that alter the files in directory using commands.  
- * User can use coustom commands like '*help*', '*oragnize*'.
- * NodeJS and JavaScript is used to build and organize file in the directory.   
+ * Created a File organize that alters the files in the directory using commands.
+ * Users can use custom commands like 'help' and  'organize'.
+ * NodeJS and JavaScript are used to build and organize the file in the directory. 
  
 ### Commands
 
